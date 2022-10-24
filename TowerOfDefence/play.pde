@@ -1,0 +1,3 @@
+void play() {
+  background(blue);
+}
