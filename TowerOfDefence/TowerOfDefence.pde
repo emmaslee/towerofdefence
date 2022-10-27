@@ -25,9 +25,11 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Buttons
-Button start;
+Button start, newWave;
 
 //Collections of objects
+Node[] nodes;
+Mob mobby;
 
 //Images and Gifs
 Gif introAnimation;
@@ -40,7 +42,8 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
-  size(1000, 800);
+  introAnimation = new Gif("frame_", "_delay-0.05s.gif", 10, 2, 400, 400, width, height);
+  size(800, 800);
   initializeModes();
   initializeVariables();
   makeButtons();
@@ -61,6 +64,8 @@ void initializeVariables() {
   //Load Fonts
 
   //Create Collections of Objects
+  nodes = new Node[8];
+  mobby = new Mob(0, 400, 1, 0);
 }
 
 void makeButtons() {
@@ -76,12 +81,24 @@ void makeButtons() {
 
 void makeNodes() {
   //Plot the nodes on the map
+  nodes = new Node[8];
+  
+  nodes[0] = new Node(200, 400, 0, -1);
+  nodes[1] = new Node(200, 200, 1, 0);
+  nodes[2] = new Node(400, 200, 0, 1);
+  nodes[3] = new Node(400, 600, -1, 0);
+  nodes[4] = new Node(300, 600, 0, -1);
+  nodes[5] = new Node(300, 500, 1, 0);
+  nodes[6] = new Node(500, 500, 0, -1);
+  nodes[7] = new Node(500, 400, 1, 0);
+  
 }
 
 
 // ===================== DRAW ===========================
 
 void draw() {
+  introAnimation.show();
   click();
   if (mode == INTRO) {
     intro();
@@ -92,4 +109,7 @@ void draw() {
   } else if (mode == GAMEOVER) {
     gameOver();
   }
+  
+  textSize(20);
+  text(mouseX + "'" + mouseY, mouseX, mouseY-20);
 }

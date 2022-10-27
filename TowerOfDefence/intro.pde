@@ -1,5 +1,5 @@
 void intro() {
-  background(pink);
+  introAnimation.show();
   start.show();
   if (start.clicked){
     mode = PLAY;
