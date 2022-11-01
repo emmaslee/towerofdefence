@@ -3,6 +3,8 @@ void play() {
   drawMap();
   animateThings();
   drawPlayInterface();
+  handleButtonClicks();
+  nextWave.show();
 }
 
 void drawMap() {
@@ -29,6 +31,11 @@ void drawMap() {
   while (i < 8) {
     nodes[i].show();
     i++;
+    
+    //side button catalog
+    fill(0);
+    fill(0);
+    rect(900, 300, 100, 1000);
   }
 }
 
@@ -37,13 +44,24 @@ void drawPlayInterface() {
   fill(black);
   rect(900, height/2, 200, height);
 
-  //fill(white);
-  //textSize(20);
-  //text("Next Wave", 900, 30);
-  //nextWave.show();
+  fill(white);
+  textSize(20);
+  text("Next Wave", 900, 30);
+ // nextWave.show();
 }
 
 void animateThings() {
-  mobby.show();
-  mobby.act();
+  int i = 0;
+  while (i < mobs.size()) {
+  Mob myMob = mobs.get(i);
+  myMob.act();
+  myMob.show();
+  i++;
+}
+}
+
+void handleButtonClicks() {
+ //if (nextWave.clicked) {
+   
+ //}
 }

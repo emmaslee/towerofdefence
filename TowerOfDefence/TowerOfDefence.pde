@@ -25,14 +25,15 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Buttons
-Button start, newWave;
+Button start, nextWave;
 
 //Collections of objects
 Node[] nodes;
-Mob mobby;
+ArrayList<Mob> mobs;
 
 //Images and Gifs
 Gif introAnimation;
+PImage nextWaveIcon;
 //Fonts
 PFont revamped;
 
@@ -42,8 +43,8 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
-  introAnimation = new Gif("frame_", "_delay-0.05s.gif", 10, 2, 400, 400, width, height);
-  size(800, 800);
+  introAnimation = new Gif("frame_", "_delay-0.05s.gif", 10, 2, 500, 400, width, height);
+  size(1000, 800);
   initializeModes();
   initializeVariables();
   makeButtons();
@@ -65,7 +66,7 @@ void initializeVariables() {
 
   //Create Collections of Objects
   nodes = new Node[8];
-  mobby = new Mob(0, 400, 1, 0);
+  mobs = new ArrayList<Mob>();
 }
 
 void makeButtons() {
@@ -73,7 +74,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-
+nextWave = new  Button("playbutton.png", 900, 100, 200, 100, white, black);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset
