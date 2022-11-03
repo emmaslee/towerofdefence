@@ -13,4 +13,32 @@
 
 class Tower {
   
+  float x, y;
+  int cooldown, threshold;
+  
+  Tower(float _x, float _y, int c, int th) {
+    x = _x;
+    y = _y;
+    cooldown = c;
+    threshold = th;
+  }
+  
+  void show() {
+    stroke(black);
+    strokeWeight(4);
+    fill(blue);
+    square(x, y, 40);
+    
+}
+
+void act() {
+ cooldown++;
+ if (cooldown == threshold) {
+   cooldown = 0;
+   bullets.add(new Bullet(x, y, 0, -10)); //UP
+   bullets.add(new Bullet(x, y, 0, 10)); //DOWN
+   bullets.add(new Bullet(x, y, -10, 0)); //LEFT
+   bullets.add(new Bullet(x, y, 10, 0)); //RIGHT
+ }
+}
 }

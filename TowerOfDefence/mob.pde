@@ -5,18 +5,21 @@
 //Once the player has no more health, it's game over!
 
 class Mob {
-  float x, y, vx, vy;
+  float x, y, vx, vy, d;
+  int hp;
+  
   Mob (float _x, float _y, float _vx, float _vy) {
     x = _x;
     y = _y;
     vx = _vx;
     vy = _vy;
+    d = 40;
   }
 
   void show() {
     fill(purple);
     strokeWeight(3);
-    circle(x, y, 40);
+    circle(x, y, d);
   }
 
   void act() {
@@ -31,5 +34,14 @@ class Mob {
       }
       i++;
     }
+    
+    i = 0;
+    while (i < bullets.size()) {
+      Bullet myBullet = bullets.get(i);
+      if ( dist(myBullet.x, myBullet.y, x, y) < d/2 + myBullet.d/2) {
+        hp = hp -1;
+      }
+      i++;
+    }
   }
-}
+  }

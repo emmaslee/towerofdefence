@@ -34,7 +34,6 @@ void drawMap() {
     
     //side button catalog
     fill(0);
-    fill(0);
     rect(900, 300, 100, 1000);
   }
 }
@@ -47,7 +46,7 @@ void drawPlayInterface() {
   fill(white);
   textSize(20);
   text("Next Wave", 900, 30);
- // nextWave.show();
+  nextWave.show();
 }
 
 void animateThings() {
@@ -56,12 +55,33 @@ void animateThings() {
   Mob myMob = mobs.get(i);
   myMob.act();
   myMob.show();
-  i++;
+  if (myMob.hp <= 0) {
+   mobs.remove(i); 
+  } else {
+    i++;
+  }
+ 
 }
+
+  i = 0; 
+  while( i < towers.size()) {
+   Tower myTower = towers.get(i);
+  myTower.act();
+   myTower.show();
+   i++;
+  }
+  
+  i = 0; 
+  while( i < bullets.size()) {
+   Bullet myBullet = bullets.get(i);
+   myBullet.act();
+   myBullet.show();
+   i++;
+  }
 }
 
 void handleButtonClicks() {
- //if (nextWave.clicked) {
-   
- //}
+ if (nextWave.clicked) {
+   mobs.add(new Mob(0, 400, 3, 0));
+ }
 }

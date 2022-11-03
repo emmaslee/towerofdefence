@@ -30,6 +30,8 @@ Button start, nextWave;
 //Collections of objects
 Node[] nodes;
 ArrayList<Mob> mobs;
+ArrayList<Tower> towers;
+ArrayList<Bullet> bullets;
 
 //Images and Gifs
 Gif introAnimation;
@@ -67,6 +69,11 @@ void initializeVariables() {
   //Create Collections of Objects
   nodes = new Node[8];
   mobs = new ArrayList<Mob>();
+  towers = new ArrayList<Tower>();
+  bullets = new ArrayList<Bullet>();
+  
+  //test towers
+  towers.add(new Tower(300, 400, 0, 60));
 }
 
 void makeButtons() {
