@@ -30,7 +30,7 @@ void drawMap() {
   int i = 0;
   while (i < 8) {
     nodes[i].show();
-    i++;
+    i++; 
     
     //side button catalog
     fill(0);
@@ -45,7 +45,7 @@ void drawPlayInterface() {
 
   fill(white);
   textSize(20);
-  text("Next Wave", 900, 30);
+  image(playButton, 800, 70, 70, 70);
   nextWave.show();
 }
 
@@ -76,7 +76,11 @@ void animateThings() {
    Bullet myBullet = bullets.get(i);
    myBullet.act();
    myBullet.show();
+  // if (myBullet <= 0) {
+    // bullets.remove(i);
+  // } else {
    i++;
+  // }
   }
 }
 

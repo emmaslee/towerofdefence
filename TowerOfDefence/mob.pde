@@ -14,13 +14,22 @@ class Mob {
     vx = _vx;
     vy = _vy;
     d = 40;
+    hp = 3;
   }
 
   void show() {
     fill(purple);
     strokeWeight(3);
     circle(x, y, d);
+    healthbar();
   }
+void healthbar() {
+    rectMode(CORNER);
+    noStroke();
+    fill(black);
+    rect(x-27, y-(d+10)-2, 54, 24);//background
+    fill(purple);
+}
 
   void act() {
     x = x + vx;
@@ -44,4 +53,7 @@ class Mob {
       i++;
     }
   }
-  }
+  
+
+
+}

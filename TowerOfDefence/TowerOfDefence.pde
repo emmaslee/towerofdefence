@@ -36,6 +36,11 @@ ArrayList<Bullet> bullets;
 //Images and Gifs
 Gif introAnimation;
 PImage nextWaveIcon;
+PImage playButton;
+
+//variable image
+PImage selectedImage;
+
 //Fonts
 PFont revamped;
 
@@ -51,6 +56,11 @@ void setup() {
   initializeVariables();
   makeButtons();
   makeNodes();
+  
+  //image
+  playButton = loadImage("playButton.png");
+  
+  selectedImage = playButton;
 }
 
 void initializeModes() {
@@ -81,7 +91,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-nextWave = new  Button("playbutton.png", 900, 100, 200, 100, white, black);
+nextWave = new  Button(playButton, 900, 100, 200, 100, white, black);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset
