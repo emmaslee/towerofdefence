@@ -6,7 +6,11 @@
 
 class Mob {
   float x, y, vx, vy, d;
-  int hp;
+  float hp, maxhp;
+  int value;
+  float speed;
+  float fillColour;
+  
   
   Mob (float _x, float _y, float _vx, float _vy) {
     x = _x;
@@ -14,6 +18,8 @@ class Mob {
     vx = _vx;
     vy = _vy;
     d = 40;
+   maxhp = 3 + waveNumber/2;
+    value = 1;
     hp = 3;
   }
 
@@ -29,10 +35,11 @@ void healthbar() {
     fill(black);
     rect(x-27, y-(d+10)-2, 54, 24);//background
     fill(purple);
+    rectMode(CENTER);
 }
 
   void act() {
-    x = x + vx;
+    x = x + vx; //vy*speed
     y = y+ vy;
 
     int i = 0;
@@ -49,6 +56,7 @@ void healthbar() {
       Bullet myBullet = bullets.get(i);
       if ( dist(myBullet.x, myBullet.y, x, y) < d/2 + myBullet.d/2) {
         hp = hp -1;
+        myBullet.hp = myBullet.hp - 1;
       }
       i++;
     }

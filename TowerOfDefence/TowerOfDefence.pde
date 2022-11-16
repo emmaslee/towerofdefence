@@ -44,6 +44,8 @@ PImage selectedImage;
 //Fonts
 PFont revamped;
 
+//intitialize variables
+int waveNumber;
 // ===================== SETUP =========================
 
 void setup() {
@@ -56,6 +58,7 @@ void setup() {
   initializeVariables();
   makeButtons();
   makeNodes();
+  waveNumber = 1;
   
   //image
   playButton = loadImage("playButton.png");
@@ -91,7 +94,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-nextWave = new  Button(playButton, 900, 100, 200, 100, white, black);
+nextWave = new  Button(playButton, 900, 100, 200, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset

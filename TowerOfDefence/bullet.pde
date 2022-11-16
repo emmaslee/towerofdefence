@@ -3,7 +3,7 @@
 
 class Bullet {
   
-  float x, y, vx, vy, d;
+  float x, y, vx, vy, d, hp;
   
   Bullet(float _x, float _y, float _vx, float _vy) {
     x = _x;
@@ -11,6 +11,7 @@ class Bullet {
     vx = _vx;
     vy = _vy;
     d = 15;
+    hp = 1;
 }
 
 void show() {
