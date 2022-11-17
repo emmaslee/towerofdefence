@@ -46,7 +46,7 @@ void drawPlayInterface() {
   fill(white);
   textSize(20);
   nextWave.show();
-  image(playButton, 800, 70, 70, 70);
+ 
 }
 
 void animateThings() {

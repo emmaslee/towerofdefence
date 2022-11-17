@@ -4,11 +4,17 @@
 
 // ================ GLOBAL VARIABLES =================
 
-final int INTRO    = 0;
-final int PLAY     = 1;
-final int BUILD    = 2;
-final int GAMEOVER = 3;
+final int INTRO     = 0;
+final int PLAY      = 1;
+final int BUILD     = 2;
+final int GAMEOVER  = 3;
+final int MAPSELECT = 4;
 int mode;
+
+//Tower types
+final int GUN = 0;
+final int AOE = 1;
+final int SNIPER = 2;
 
 //Pallette
 color white  = #ffffff;
@@ -37,6 +43,7 @@ ArrayList<Bullet> bullets;
 Gif introAnimation;
 PImage nextWaveIcon;
 PImage playButton;
+PImage galaxy;
 
 //variable image
 PImage selectedImage;
@@ -56,12 +63,15 @@ void setup() {
   size(1000, 800);
   initializeModes();
   initializeVariables();
+  
+  //image
+  playButton = loadImage("playButton.png");
+  
   makeButtons();
   makeNodes();
   waveNumber = 1;
   
-  //image
-  playButton = loadImage("playButton.png");
+  
   
   selectedImage = playButton;
 }
@@ -94,7 +104,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-nextWave = new  Button(playButton, 900, 100, 200, 100, green, white);
+nextWave = new  Button(playButton, 900, 100, 150, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset

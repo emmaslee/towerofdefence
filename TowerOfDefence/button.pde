@@ -58,7 +58,7 @@ class Button {
       textSize(w/4);
       text(text, x, y);
     } else {
-      image(img, x, y, w, h);
+      image(img, x, y, w*0.8, h*0.8);
     }
   }
 

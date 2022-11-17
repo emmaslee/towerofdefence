@@ -33,7 +33,7 @@ void healthbar() {
     rectMode(CORNER);
     noStroke();
     fill(black);
-    rect(x-27, y-(d+10)-2, 54, 24);//background
+    rect(x-10, y-(d+10)-2, 40, 24);//background  //x-27
     fill(purple);
     rectMode(CENTER);
 }
