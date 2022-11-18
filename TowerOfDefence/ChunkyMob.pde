@@ -6,8 +6,8 @@ class ChonkyMob extends Mob {
       maxhp = 20 + waveNumber;
       hp = maxhp;
       value = 5;
-      fill(orange);
-      stroke(pink);
+      fillColor = orange;
+      strokeColor = pink;
       speed = 0.5;
   }
 }

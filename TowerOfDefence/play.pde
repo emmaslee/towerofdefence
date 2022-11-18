@@ -45,6 +45,7 @@ void drawPlayInterface() {
 
   fill(white);
   textSize(20);
+  text("Next Wave: " + waveNumber, 900, 30);
   nextWave.show();
  
 }
@@ -79,19 +80,21 @@ void animateThings() {
     if (myBullet.hp <= 0) {
       bullets.remove(i);
     } else {
-
       i++;
     }
   }
 }
 
 void handleButtonClicks() {
-  if (nextWave.clicked) {
-    mobs.add(new Mob(0, 400, 3, 0));
-    mobs.add(new Mob(-40, 400, 3, 0));
-    mobs.add(new Mob(-80, 400, 3, 0));
-    mobs.add(new Mob(-120, 400, 3, 0));
+  if (nextWave.clicked && mobs.size() == 0) {
+    addWave();
+    waveNumber++;
+    //mobs.add(new Mob(0, 400, 3, 0));
+    //mobs.add(new Mob(-40, 400, 3, 0));
+    //mobs.add(new Mob(-80, 400, 3, 0));
+    //mobs.add(new Mob(-120, 400, 3, 0));
   }
+ 
 }
 
 void addWave() {
@@ -99,7 +102,7 @@ void addWave() {
   int x = 0;
   while (i < waveNumber) {
     mobs.add(new Mob(0, 400, 3, 0));
-    x = x - 50;
+    //x = x - 50;
     i++;
   }
 
@@ -108,7 +111,7 @@ void addWave() {
     x = 50;
     while (i < waveNumber/3) {
       mobs.add(new ChonkyMob(0, 400, 3, 0));
-      x = x- 100;
+      //x = x- 100;
       i++;
     }
   }

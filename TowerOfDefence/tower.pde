@@ -21,7 +21,7 @@ class Tower {
   float x, y;
   int cooldown, threshold;
   int towerMode;
-  int towerType;
+ // int towerType;
   
   //Tower = (int type) {
   //  x = mouseX;
@@ -42,18 +42,32 @@ class Tower {
   }
   
   void show() {
+    stroke(black);
+    strokeWeight(4);
+    fill(blue);
     if (towerMode == PLACED) {
-        x = mouseX;
-        y = mouseY;
-        if (mousePressed && mouseX < 790) {
-          towerMode = PLACED;
-          //building = false;
-      }
+      square(x, y, 40);
+    } else if (towerMode == PLACING) {
+     square(mouseX, mouseY, 40);
+     if(mousePressed) {
+       mode = PLACED;
+       x = mouseX;
+       y = mouseY;
+     }
     }
-    if (towerType == GUN) showGunTower();
-    //if (towerType == AOE) showAoETower();
-    //if (towerType == SNIPER) showSniperTower();
-}
+  }
+//    if (mode == PLACED) {
+//        x = mouseX;
+//        y = mouseY;
+//        if (mousePressed && mouseX < 790) {
+//          mode = PLACED;
+//          //building = false;
+//      }
+//    }
+//    if (towerType == GUN) showGunTower();
+//    if (towerType == AOE) showAoETower();
+//    if (towerType == SNIPER) showSniperTower();
+//}
 
 void  showGunTower() {
   stroke(black);

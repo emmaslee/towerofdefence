@@ -9,7 +9,7 @@ class Mob {
   float hp, maxhp;
   int value;
   float speed;
-  float fillColour;
+  color fillColor, strokeColor;
   
   
   Mob (float _x, float _y, float _vx, float _vy) {
@@ -21,6 +21,7 @@ class Mob {
    maxhp = 3 + waveNumber/2;
     value = 1;
     hp = 3;
+    speed = 2;
   }
 
   void show() {
@@ -33,14 +34,18 @@ void healthbar() {
     rectMode(CORNER);
     noStroke();
     fill(black);
-    rect(x-10, y-(d+10)-2, 40, 24);//background  //x-27
-    fill(purple);
+    rect(x-27, y-(d+5)-2, 54, 14);//background 
+    fill(pink);
+    rect(x-25, y-(d+5), 50, 10);
+    fill(green);
+    rect(x-25, y-(d+5), hp*50/maxhp, 10);
     rectMode(CENTER);
 }
 
   void act() {
-    x = x + vx; //vy*speed
-    y = y+ vy;
+    x = x + vx*speed; 
+    y = y + vy*speed;
+    //checkForNodes();
 
     int i = 0;
     while (i < nodes.length) {

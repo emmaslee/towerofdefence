@@ -31,7 +31,7 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Buttons
-Button start, nextWave;
+Button start, nextWave, buildMode, playMode, buyGunTower;
 
 //Collections of objects
 Node[] nodes;
@@ -50,6 +50,8 @@ PImage selectedImage;
 
 //Fonts
 PFont revamped;
+float a;
+int count; //for flashing text
 
 //intitialize variables
 int waveNumber;
@@ -70,7 +72,6 @@ void setup() {
   makeButtons();
   makeNodes();
   waveNumber = 1;
-  
   
   
   selectedImage = playButton;
@@ -95,8 +96,10 @@ void initializeVariables() {
   towers = new ArrayList<Tower>();
   bullets = new ArrayList<Bullet>();
   
+
+  
   //test towers
-  towers.add(new Tower(300, 400, 0, 60));
+  //towers.add(new Tower(300, 400, 0, 60));
 }
 
 void makeButtons() {
@@ -106,7 +109,7 @@ void makeButtons() {
   //PLAY - Next Wave, To Build Mode
 nextWave = new  Button(playButton, 900, 100, 150, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
-
+buyGunTower = new Button("BUILD", 900, 300, 150, 100, green, white);
   //GAMEOVER - Reset
 }
 
