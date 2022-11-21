@@ -1,7 +1,7 @@
 void intro() {
   introAnimation.show();
   start.show();
-  if (start.clicked){
+  if (start.clicked) {
     mode = PLAY;
   }
 }

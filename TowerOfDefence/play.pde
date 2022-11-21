@@ -5,6 +5,7 @@ void play() {
   drawPlayInterface();
   handleButtonClicks();
   nextWave.show();
+  buildButton.show();
 }
 
 void drawMap() {
@@ -29,7 +30,7 @@ void drawMap() {
   //temp nodes'
   int i = 0;
   while (i < 8) {
-    nodes[i].show();
+    map1nodes[i].show();
     i++;
 
     //side button catalog
@@ -94,7 +95,9 @@ void handleButtonClicks() {
     //mobs.add(new Mob(-80, 400, 3, 0));
     //mobs.add(new Mob(-120, 400, 3, 0));
   }
- 
+  if (buildButton.clicked) {
+    mode = BUILD;
+  }
 }
 
 void addWave() {

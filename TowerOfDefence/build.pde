@@ -1,16 +1,16 @@
 void build() {
   drawMap();
   animateThings();
-  flashingSign();
+  //flashingSign();
   drawBuildInterface();
   handleBuildClicks();
 }
 
-void flashingSign() {
-  count++;
-  if (count < 20) ;
-  if (count == 40) count = 0;
-}
+//void flashingSign() {
+//  count++;
+//  if (count < 20) ;
+//  if (count == 40) count = 0;
+//}
 
 void drawBuildInterface() {
   stroke(white);

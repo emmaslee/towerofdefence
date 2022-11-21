@@ -10,15 +10,15 @@ class Mob {
   int value;
   float speed;
   color fillColor, strokeColor;
-  
-  
+
+
   Mob (float _x, float _y, float _vx, float _vy) {
     x = _x;
     y = _y;
     vx = _vx;
     vy = _vy;
     d = 40;
-   maxhp = 3 + waveNumber/2;
+    maxhp = 3 + waveNumber/2;
     value = 1;
     hp = 3;
     speed = 2;
@@ -30,20 +30,20 @@ class Mob {
     circle(x, y, d);
     healthbar();
   }
-void healthbar() {
+  void healthbar() {
     rectMode(CORNER);
     noStroke();
     fill(black);
-    rect(x-27, y-(d+5)-2, 54, 14);//background 
+    rect(x-27, y-(d+5)-2, 54, 14);//background
     fill(pink);
     rect(x-25, y-(d+5), 50, 10);
     fill(green);
     rect(x-25, y-(d+5), hp*50/maxhp, 10);
     rectMode(CENTER);
-}
+  }
 
   void act() {
-    x = x + vx*speed; 
+    x = x + vx*speed;
     y = y + vy*speed;
     //checkForNodes();
 
@@ -55,7 +55,7 @@ void healthbar() {
       }
       i++;
     }
-    
+
     i = 0;
     while (i < bullets.size()) {
       Bullet myBullet = bullets.get(i);
@@ -66,7 +66,4 @@ void healthbar() {
       i++;
     }
   }
-  
-
-
 }
