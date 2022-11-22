@@ -115,6 +115,7 @@ playMode = new  Button("PLAY", 900, 100, 150, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
   buildButton = new Button("BUILD", 900, 225, 150, 100, green, white);
   buyGunTower = new Button("GUN", 900, 225, 150, 100, blue, white);
+  
   //buyAoeTower  = new Button("AOE\n$"+price[AOE], 900, 460, 140, 100, blue, white);
   //buySniperTower = new Button("SNIPE\n$"+price[SNIPER], 900, 500, 140, 100, blue, white);
   //GAMEOVER - Reset
@@ -133,7 +134,7 @@ void makeNodes() {
   map1nodes[6] = new Node(500, 500, 0, -1);
   map1nodes[7] = new Node(500, 400, 1, 0);
   
-  
+  nodes = map1nodes;
 }
 
 

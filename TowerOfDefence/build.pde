@@ -18,6 +18,7 @@ void drawBuildInterface() {
   rect(900, height/2, 200, height);
   playMode.show();
   buyGunTower.show();
+  
 }
 
 void handleBuildClicks() {
@@ -25,6 +26,6 @@ void handleBuildClicks() {
     mode = PLAY;
   }
   if (buyGunTower.clicked) {
-    towers.add(new Tower(0, 0, 0, 30));
+    towers.add(new Tower(GUN, 0, 30));
   }
 }
