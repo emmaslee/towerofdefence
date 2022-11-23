@@ -18,6 +18,8 @@ void drawBuildInterface() {
   rect(900, height/2, 200, height);
   playMode.show();
   buyGunTower.show();
+  buyAoeTower.show();
+  buySniperTower.show();
   
 }
 
@@ -26,6 +28,13 @@ void handleBuildClicks() {
     mode = PLAY;
   }
   if (buyGunTower.clicked) {
-    towers.add(new Tower(GUN, 0, 30));
+    towers.add(new Tower(GUN));
   }
+    if (buyAoeTower.clicked) {
+    towers.add(new Tower(AOE));
+    }
+    if (buySniperTower.clicked) {
+    towers.add(new Tower(SNIPER));
+      
+}
 }

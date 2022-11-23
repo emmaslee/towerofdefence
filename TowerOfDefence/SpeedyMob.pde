@@ -5,9 +5,9 @@ class SpeedyMob extends Mob {
     d = 40;
     maxhp = 5 + waveNumber;
     hp = maxhp;
-    value = 5;
-    //fillColor = orange;
-    //strokeColor = pink;
-    speed = 2;
+    value = 3;
+    fillColor = black;
+    strokeColor = orange;
+    speed = 2.5;
   }
 }

@@ -17,6 +17,7 @@ class Node {
   void show() {
     fill(pink);
     stroke(pink);
+    strokeWeight(7);
     circle(x, y, 30);
     line (x, y, x+dx*50, y+dy*50);
   }

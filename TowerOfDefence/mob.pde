@@ -20,12 +20,15 @@ class Mob {
     d = 40;
     maxhp = 3 + waveNumber/2;
     value = 1;
-    hp = 3;
-    speed = 2;
+    hp = maxhp;
+    fillColor = purple;
+    strokeColor = pink;
+    speed = 1;
   }
 
   void show() {
-    fill(purple);
+    stroke(strokeColor);
+    fill(fillColor);
     strokeWeight(3);
     circle(x, y, d);
     healthbar();

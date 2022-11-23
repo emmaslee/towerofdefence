@@ -48,7 +48,6 @@ class Tower {
         y = mouseY;
         if (mousePressed && mouseX < 790) {
         towerMode = PLACED;
-        building = false;
       }
     }
     if (towerType == GUN) showGunTower();
@@ -88,10 +87,19 @@ void showSniperTower() {
   stroke(black);
   strokeWeight(4);
   fill(purple);
-  triangle(0, 100, 100, 200, 300, 200);
+  triangle(x, y, x +40, y + 40, x, y + 80);
+  stroke(white);
+  strokeWeight(12);
+  line(x+40, y+40, x + 100, y + 40);
 }
 
 void act() {
+  if (towerType == GUN) gunTowerAct();
+ if (towerType == AOE) aoeTowerAct();
+ if (towerType == SNIPER) sniperTowerAct();
+}
+
+void gunTowerAct() {
  cooldown++;
  if (cooldown >= threshold) {
    cooldown = 0;
@@ -100,5 +108,16 @@ void act() {
    bullets.add(new Bullet(x, y, -10, 0)); //LEFT
    bullets.add(new Bullet(x, y, 10, 0)); //RIGHT
  }
+}
+void aoeTowerAct() {
+  cooldown++;
+}
+
+void sniperTowerAct() {
+  println(cooldown);
+  cooldown++;
+  if (cooldown >= threshold) {
+    
+  }
 }
 }

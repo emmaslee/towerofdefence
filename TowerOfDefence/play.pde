@@ -36,6 +36,7 @@ void drawMap() {
     //side button catalog
     fill(0);
     rect(900, 300, 100, 1000);
+ 
   }
 }
 
@@ -83,7 +84,9 @@ void animateThings() {
     } else {
       i++;
     }
+   
   }
+
 }
 
 void handleButtonClicks() {
